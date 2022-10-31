@@ -12,4 +12,5 @@ class PollsIndex(ListView):
 
 
 class PollDetail(DetailView):
-    pass
+    template_name = "polls/detail.html"
+    model = Question
