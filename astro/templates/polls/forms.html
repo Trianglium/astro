@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% load symbol_tags crispy_forms_tags %}
+
+{% block title %}Polls{% endblock %}
+
+{% block content %}
+    {% crispy polls_form %}
+
+{% endblock %}
