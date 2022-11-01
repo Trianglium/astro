@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-
+{% load home_extras %}
 {% block title %}Welcome to Astro{% endblock %}
 
 {% block content %}
@@ -7,6 +7,12 @@
        <div class="mt-4 p-5 bg-primary text-white rounded">
           <h1>Welcome to Astro!</h1>
           <p>The polling site dedicated to identifying astrological rulerships and creating the ultimate reference site for astrologers.</p>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                {% include "home/current_planets.html" %}
+            </div>
         </div>
     </div>
 
