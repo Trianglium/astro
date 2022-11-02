@@ -1,9 +1,21 @@
 {% extends "base.html" %}
-{% load static %}
+
 {% load symbol_tags %}
 
 {% block title %}Polls{% endblock %}
 
 {% block content %}
+<div class="container">
+    <div class="row">
+
+        <h1>{{ question.question_text }}</h1>
+        <ul>
+        {% for choice in question.choice_set.all %}
+            <li>{{ choice.choice_text }}</li>
+        {% endfor %}
+        </ul>
+
+    </div>
+</div>
 
 {% endblock %}
