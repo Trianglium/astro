@@ -1,7 +1,8 @@
 from django.http import HttpResponseRedirect
 from django.shortcuts import get_object_or_404, render
-from django.urls import reverse
+from django.urls import reverse, reverse_lazy
 from django.views.generic import ListView, DetailView
+from django.views.generic.edit import CreateView, UpdateView
 from .models import Question, Choice
 from django.utils import timezone
 
@@ -12,9 +13,9 @@ class PollsIndex(ListView):
     context_object_name = "latest_question_list"
 
     def get_queryset(self):
-        return Question.objects.filter(
-        pub_date__lte=timezone.now()
-    ).order_by('-pub_date')[:5]
+        return Question.objects.filter(pub_date__lte=timezone.now()).order_by(
+            "-pub_date"
+        )[:5]
 
 
 class PollDetail(DetailView):
@@ -44,3 +45,18 @@ def vote(request, question_id):
         selected_choice.votes += 1
         selected_choice.save()
         return HttpResponseRedirect(reverse("polls:poll-results", args=(question.id,)))
+
+
+class CreatePoll(CreateView):
+    model = Question
+    fields = ["question_text", "pub_date", "tags"]
+
+
+class UpdatePoll(UpdateView):
+    model = Question
+    fields = ["question_text", "pub_date", "tags"]
+
+
+class DeletePoll(DeleteView):
+    model = Question
+    success_url = reverse_lazy("polls-index")
