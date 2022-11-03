@@ -11,10 +11,16 @@
          <p>The best community agggregatted resources around</p>
     </div>
     <div class="row mt-3">
-        {% if latest_question_list %}
-            <ul>
+        {% if resource_list %}
+            <ul class="list-unstyled">
             {% for resource in resource_list %}
-                <li><a href="{% url 'faq:resource-detail' resource.id %}">{{ resource.title }}</a></li>
+                <li>
+                {% if resource.image %}
+                    <img class="img-thumbnail" src="{{ resource.image.url }}" alt="{{ resource.title }}"/>
+                {% elif resource.image_url %}
+                    <img class="img-thumbnail" src="{{ resource.image_url }}" alt="{{ resource.title }}"/>
+                {% endif %}
+                    <a href="{% url 'faq:resource-detail' resource.id %}">{{ resource.title }}</a></li>
             {% endfor %}
             </ul>
         {% else %}

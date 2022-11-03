@@ -7,15 +7,19 @@
 {% block content %}
 <div class="container mt-3">
     <div class="row mt-3">
-        <div class="col-6">
+        <div class="col-8">
             {% if resource.image %}
-                <img src="{{ resource.image.url }}"/>
+                <img class="img-fluid" src="{{ resource.image.url }}" alt="{{ resource.title }}"/>
             {% elif resource.image_url %}
                 <img src="{{ resource.image_url }}"/>
             {% endif %}
-        <div class="col-6">
+        </div>
+        <div class="col-4">
             <h1>{{ resource.title }} <br/>
         - {{ resource.author }}</h2>
+
+        {% if resource.description %}<br>
+        <p>{{ resource.description }}</p>{% endif %}
 
         </div>
 
