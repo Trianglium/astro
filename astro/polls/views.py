@@ -2,7 +2,7 @@ from django.http import HttpResponseRedirect
 from django.shortcuts import get_object_or_404, render
 from django.urls import reverse, reverse_lazy
 from django.views.generic import ListView, DetailView
-from django.views.generic.edit import CreateView, UpdateView
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from .models import Question, Choice
 from django.utils import timezone
 
@@ -50,6 +50,8 @@ def vote(request, question_id):
 class CreatePoll(CreateView):
     model = Question
     fields = ["question_text", "pub_date", "tags"]
+
+
 
 
 class UpdatePoll(UpdateView):
