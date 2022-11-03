@@ -52,8 +52,6 @@ class CreatePoll(CreateView):
     fields = ["question_text", "pub_date", "tags"]
 
 
-
-
 class UpdatePoll(UpdateView):
     model = Question
     fields = ["question_text", "pub_date", "tags"]
