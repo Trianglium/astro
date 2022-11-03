@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     "taggit",
     "home.apps.HomeConfig",
     "polls.apps.PollsConfig",
+    "faq.apps.FaqConfig",
 ]
 
 MIDDLEWARE = [
