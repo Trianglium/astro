@@ -7,6 +7,7 @@ class Resource(models.Model):
     link = models.URLField(blank=True)
     image = models.ImageField(upload_to="resources/", blank=True)
     image_link = models.URLField(blank=True)
+    description = models.TextField(blank=True)
 
     def __str__(self):
         return self.title
