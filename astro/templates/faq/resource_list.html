@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% load faq_utils %}
+
+{% block title %}Resources{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        {% if latest_question_list %}
+            <ul>
+            {% for resource in resource_list %}
+                <li><a href="{% url 'faq:resource-detail' resource.id %}">{{ resource.title }}</a></li>
+            {% endfor %}
+            </ul>
+        {% else %}
+            <p>No Resources available.</p>
+        {% endif %}
+
+
+
+    </div>
+</div>
+
+{% endblock %}
