@@ -11,14 +11,29 @@
          <p>Commonly asked questions and their answers. Don't forget to checkout the <span class="badge bg-light text-dark"><a href="{% url 'faq:resource-list' %}">resources</a></span>!</p>
     </div>
 
-    <div class="row mt-3">
-        <div class="col">
+    <div class="row mt-3 p-3 text-center">
+        {% if point_list %}
+            {% for point in point_list %}
+            <div class="card text-center border-info" style="width: 20rem;">
+              <div class="card-body">
+                <h4 class="card-title">{{ point.name }}</h4>
+                <div class="float-start">
+                    <p class="card-text">{{ point.description }}</p> <br/>
+                </div>
+                <div class="float-end text-center"><span style='font-size:100px;'>&#{{ point.symbol }};</span></div>
+                </div>
+                <div class="card-footer">
+                    <span class="badge bg-light text-dark">{{ point.tag }}</span>
+                </div>
 
-        </div>
-
-
-
+            </div>
+            {% endfor %}
+        {% else %}
+            <p>No FAQs available.</p>
+        {% endif %}
     </div>
+
+
 </div>
 
 {% endblock %}
