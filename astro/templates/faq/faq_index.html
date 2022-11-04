@@ -14,13 +14,14 @@
     <div class="row mt-3 p-3 text-center">
         {% if point_list %}
             {% for point in point_list %}
-            <div class="card text-center border-info" style="width: 20rem;">
+            {% load static %}
+            <div class="card text-center border-info" style="width:33%;">
               <div class="card-body">
                 <h4 class="card-title">{{ point.name }}</h4>
                 <div class="float-start">
                     <p class="card-text">{{ point.description |safe }}</p> <br/>
                 </div>
-                <div class="float-end text-center"><span style='font-size:100px;'>&#{{ point.symbol }};</span></div>
+                <div class="float-end text-center"><span style='font-size:70px;'>&#{{ point.symbol }};</span></div>
                 </div>
                 <div class="card-footer bg-transparent border-info">
                     {% if point.tag == "planet" %}
