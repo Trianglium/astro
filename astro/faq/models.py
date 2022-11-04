@@ -11,3 +11,22 @@ class Resource(models.Model):
 
     def __str__(self):
         return self.title
+
+
+PLANET = "planet"
+SIGN = "sign"
+HOUSE= "house"
+POINTS = [
+    (PLANET, "planet"),
+    (SIGN, "sign"),
+    (HOUSE, "house")
+]
+
+class AstroPoint(models.Model):
+    name = models.CharField(max_length=150)
+    description = models.TextField(blank=True)
+    symbol = models.TextField(blank=True)
+    tag = models.CharField(max_length=150, choices=POINTS)
+
+    def __str__(self):
+        return self.name
