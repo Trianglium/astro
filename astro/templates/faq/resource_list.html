@@ -11,24 +11,28 @@
          <p>The best community agggregatted resources around</p>
     </div>
     <div class="row mt-3 justify-content-center">
-        <div class="col-8">
+
         {% if resource_list %}
-            <ul class="list-unstyled">
             {% for resource in resource_list %}
-                <li><a href="{% url 'faq:resource-detail' resource.id %}" class="link-unstyled">
-                {% if resource.image %}
-                    <img class="img-thumbnail img-sm" src="{{ resource.image.url }}" alt="{{ resource.title }}"/>
-                {% elif resource.image_url %}
-                    <img class="img-thumbnail img-sm" src="{{ resource.image_url }}" alt="{{ resource.title }}"/>
-                {% endif %}
-                    <span class="h5">{{ resource.title }}</span>
-                </a></li>
-            {% endfor %}
-            </ul>
+
+            <div class="col-12">
+                <ul class="list-group list-group-horizontal">
+                    <li class="list-group-item"><a href="{% url 'faq:resource-detail' resource.id %}" class="link-unstyled">
+                        {% if resource.image %}
+                        <img class="img-thumbnail img-sm" src="{{ resource.image.url }}" alt="{{ resource.title }}"/>
+                    {% elif resource.image_url %}
+                        <img class="img-thumbnail img-sm" src="{{ resource.image_url }}" alt="{{ resource.title }}"/>
+                    {% endif %}
+                    </a></li>
+                    <li class="list-group-item"><a href="{% url 'faq:resource-detail' resource.id %}" class="link-unstyled"><h5>{{ resource.title }}</h5>
+                    </a></li>
+                {% endfor %}
+                </ul>
+            </div>
         {% else %}
             <p>No Resources available.</p>
         {% endif %}
-        </div>
+
 
 
 
