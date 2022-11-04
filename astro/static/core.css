@@ -10,11 +10,15 @@ img.img-fluid {
 }
 
 .img-sm {
-  max-width: 200px;
+  max-width: 100px;
 }
 
 
 /* Text */
 p {
   font-size: 1rem;
+}
+
+.link-unstyled {
+    text-decoration: none;
 }
