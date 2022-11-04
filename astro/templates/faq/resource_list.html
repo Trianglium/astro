@@ -16,9 +16,9 @@
             {% for resource in resource_list %}
                 <li>
                 {% if resource.image %}
-                    <img class="img-thumbnail" src="{{ resource.image.url }}" alt="{{ resource.title }}"/>
+                    <img class="img-thumbnail img-sm" src="{{ resource.image.url }}" alt="{{ resource.title }}"/>
                 {% elif resource.image_url %}
-                    <img class="img-thumbnail" src="{{ resource.image_url }}" alt="{{ resource.title }}"/>
+                    <img class="img-thumbnail img-sm" src="{{ resource.image_url }}" alt="{{ resource.title }}"/>
                 {% endif %}
                     <a href="{% url 'faq:resource-detail' resource.id %}">{{ resource.title }}</a></li>
             {% endfor %}
