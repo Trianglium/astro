@@ -1,10 +1,12 @@
-from .models import Resource
+from .models import Resource, AstroPoint
 from django.views.generic import ListView, DetailView
 from django.views.generic.base import TemplateView
 
 
-class FAQIndex(TemplateView):
+class FAQIndex(ListView):
+    model = AstroPoint
     template_name = "faq/faq_index.html"
+    context_object_name = "point_list"
 
 
 class ResourceList(ListView):
