@@ -29,7 +29,7 @@
             <li class="nav-item"><a href="{% url 'polls:polls-index' %}" class="nav-link {% if request.resolver_match.url_name == 'polls-index' %}active{% endif %}">Polls</a></li>
             <li class="nav-item"><a href="/tags" class="nav-link">Tags</a></li>
             <li class="nav-item"><a href="{% url 'faq:faq-index' %}" class="nav-link {% if request.resolver_match.url_name == 'faq-index' %}active{% endif %}">FAQs</a></li>
-            <li class="nav-item"><a href="#" class="nav-link ">About</a></li>
+            <li class="nav-item"><a href="{% url 'about' %}" class="nav-link {% if request.resolver_match.url_name == 'about' %}active{% endif %}">About</a></li>
           </ul>
         </header>
     </div>
