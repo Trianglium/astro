@@ -22,8 +22,14 @@
                 </div>
                 <div class="float-end text-center"><span style='font-size:100px;'>&#{{ point.symbol }};</span></div>
                 </div>
-                <div class="card-footer">
-                    <span class="badge bg-light text-dark">{{ point.tag }}</span>
+                <div class="card-footer bg-transparent border-info">
+                    {% if point.tag == "planet" %}
+                    <span class="badge bg-primary">{{ point.tag }}</span>
+                    {% elif point.tag == "sign" %}
+                    <span class="badge bg-info">{{ point.tag }}</span>
+                    {% else %}
+                    <span class="badge bg-success">{{ point.tag }}</span>
+                    {% endif %}
                 </div>
 
             </div>
