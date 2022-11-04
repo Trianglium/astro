@@ -2,7 +2,19 @@ body {
     font-family: 'Josefin Sans', sans-serif;
 }
 
+/* Images */
+
 img.img-fluid {
   max-width: 100%;
   height: auto;
+}
+
+.img-sm {
+  max-width: 200px;
+}
+
+
+/* Text */
+p {
+  font-size: 1rem;
 }
