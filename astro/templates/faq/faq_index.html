@@ -18,7 +18,7 @@
               <div class="card-body">
                 <h4 class="card-title">{{ point.name }}</h4>
                 <div class="float-start">
-                    <p class="card-text">{{ point.description }}</p> <br/>
+                    <p class="card-text">{{ point.description |safe }}</p> <br/>
                 </div>
                 <div class="float-end text-center"><span style='font-size:100px;'>&#{{ point.symbol }};</span></div>
                 </div>
