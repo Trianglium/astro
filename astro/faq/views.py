@@ -6,7 +6,16 @@ from django.views.generic.base import TemplateView
 class FAQIndex(ListView):
     model = AstroPoint
     template_name = "faq/faq_index.html"
-    context_object_name = "point_list"
+
+    def get_context_data(self,**kwargs):
+        context = super(FAQIndex,self).get_context_data(**kwargs)
+
+        context["planet_list"] =  AstroPoint.objects.filter(tag="planet")
+        context["house_list"] =  AstroPoint.objects.filter(tag="house")
+        context["sign_list"] = AstroPoint.objects.filter(tag="sign")
+
+        return context
+
 
 
 class ResourceList(ListView):
