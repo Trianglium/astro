@@ -12,34 +12,76 @@
     </div>
 
     <div class="row mt-3 p-3 text-center">
-        {% if point_list %}
-            {% for point in point_list %}
+        <h2>Planets</h2>
+        {% if planet_list %}
+            {% for planet in planet_list %}
             {% load static %}
             <div class="card text-center border-info" style="width:33%;">
               <div class="card-body">
-                <h4 class="card-title">{{ point.name }}</h4>
+                <h4 class="card-title">{{ planet.name }}</h4>
                 <div class="float-start">
-                    <p class="card-text">{{ point.description |safe }}</p> <br/>
+                    <p class="card-text">{{ planet.description |safe }}</p> <br/>
                 </div>
-                <div class="float-end text-center"><span style='font-size:70px;'>&#{{ point.symbol }};</span></div>
+                <div class="float-end text-center"><span style='font-size:70px;'>&#{{ planet.symbol }};</span></div>
                 </div>
                 <div class="card-footer bg-transparent border-info">
-                    {% if point.tag == "planet" %}
-                    <span class="badge bg-primary">{{ point.tag }}</span>
-                    {% elif point.tag == "sign" %}
-                    <span class="badge bg-info">{{ point.tag }}</span>
-                    {% else %}
-                    <span class="badge bg-success">{{ point.tag }}</span>
-                    {% endif %}
+                    <span class="badge bg-primary">{{ planet.tag }}</span>
                 </div>
 
             </div>
             {% endfor %}
         {% else %}
-            <p>No FAQs available.</p>
+            <p>Planets coming soon</p>
         {% endif %}
     </div>
 
+    <div class="row mt-3 p-3 text-center">
+        <h2>Signs</h2>
+        {% if sign_list %}
+            {% for sign in sign_list %}
+            {% load static %}
+            <div class="card text-center border-info" style="width:33%;">
+              <div class="card-body">
+                <h4 class="card-title">{{ sign.name }}</h4>
+                <div class="float-start">
+                    <p class="card-text">{{ sign.description |safe }}</p> <br/>
+                </div>
+                <div class="float-end text-center"><span style='font-size:70px;'>&#{{ sign.symbol }};</span></div>
+                </div>
+                <div class="card-footer bg-transparent border-info">
+                    <span class="badge bg-info">{{ sign.tag }}</span>
+                </div>
+
+            </div>
+            {% endfor %}
+        {% else %}
+            <p>Signs coming soon</p>
+        {% endif %}
+    </div>
+
+    <div class="row mt-3 p-3 text-center">
+        <h2>Houses</h2>
+        {% if house_list %}
+            {% for house in house_list %}
+            {% load static %}
+            <div class="card text-center border-info" style="width:33%;">
+              <div class="card-body">
+                <h4 class="card-title">{{ house.name }}</h4>
+                <div class="float-start">
+                    <p class="card-text">{{ house.description |safe }}</p> <br/>
+                </div>
+                <div class="float-end text-center"><span style='font-size:70px;'>&#{{ house.symbol }};</span></div>
+                </div>
+                <div class="card-footer bg-transparent border-info">
+                    <span class="badge bg-success">{{ house.tag }}</span>
+                </div>
+
+            </div>
+            {% endfor %}
+        {% else %}
+            <p>Houses coming soon</p>
+        {% endif %}
+    </div>
 
 </div>
 
