@@ -14,7 +14,7 @@
       rel="stylesheet">
       <!-- Custom Stylesheet -->
     <link href="/static/core.css" rel="stylesheet">
-    
+
 </head>
 <body>
     <div class="container">
@@ -28,7 +28,14 @@
             <li class="nav-item"><a href="{% url 'home' %}" class="nav-link {% if request.resolver_match.url_name == 'home' %}active{% endif %}" aria-current="page">Home</a></li>
             <li class="nav-item"><a href="{% url 'polls:polls-index' %}" class="nav-link {% if request.resolver_match.url_name == 'polls-index' %}active{% endif %}">Polls</a></li>
 
-            <li class="nav-item"><a href="{% url 'faq:faq-index' %}" class="nav-link {% if request.resolver_match.url_name == 'faq-index' %}active{% endif %}">FAQs</a></li>
+            <li class="nav-item">
+                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">All about Astrology</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item nav-link {% if request.resolver_match.url_name == 'faq-index' %}active{% endif %}" href="{% url 'faq:faq-index' %}">Astrology Basics</a></li>
+                        <li><a class="dropdown-item nav-link {% if request.resolver_match.url_name == 'resource-list' or  request.resolver_match.url_name == 'resource-detail' %}active{% endif %}" href="{% url 'faq:resource-list' %}">Recommended Resources</a></li>
+                    </ul>
+
+            </li>
             <li class="nav-item"><a href="{% url 'about' %}" class="nav-link {% if request.resolver_match.url_name == 'about' %}active{% endif %}">About</a></li>
           </ul>
         </header>
