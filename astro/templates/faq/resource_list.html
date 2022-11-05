@@ -10,33 +10,36 @@
         <h1>Astro Resources</h1>
          <p>The best community agggregatted resources around</p>
     </div>
-    <div class="row mt-3 justify-content-center">
 
+    <div class="row my-3 justify-content-center">
         {% if resource_list %}
-            {% for resource in resource_list %}
-
-            <div class="col-12">
-                <ul class="list-group list-group-horizontal">
-                    <li class="list-group-item"><a href="{% url 'faq:resource-detail' resource.id %}" class="link-unstyled">
-                        {% if resource.image %}
-                        <img class="img-thumbnail img-sm" src="{{ resource.image.url }}" alt="{{ resource.title }}"/>
-                    {% elif resource.image_url %}
-                        <img class="img-thumbnail img-sm" src="{{ resource.image_url }}" alt="{{ resource.title }}"/>
-                    {% endif %}
-                    </a></li>
-                    <li class="list-group-item"><a href="{% url 'faq:resource-detail' resource.id %}" class="link-unstyled"><h5>{{ resource.title }}</h5>
-                    </a></li>
-                {% endfor %}
-                </ul>
+                {% for resource in resource_list %}
+                    <div class="col-6">
+                   <div class="clearfix p-4 m-2">
+                       <div class="float-start my-2">
+                           <a href="{% url 'faq:resource-detail' resource.id %}" class="link-unstyled">
+                                    {% if resource.image %}
+                                        <img class="img-thumbnail img-sm" src="{{ resource.image.url }}" alt="{{ resource.title }}"/>
+                                    {% elif resource.image_url %}
+                                        <img class="img-thumbnail img-sm" src="{{ resource.image_url }}" alt="{{ resource.title }}"/>
+                                    {% endif %}
+                                </a>
+                       </div>
+                       <div class="align-middle mt-4 my-2">
+                           <a href="{% url 'faq:resource-detail' resource.id %}" class="link-unstyled">
+                                <h5>{{ resource.title }}</h5>
+                            </a>
+                       </div>
+                      </div>
+                      </div>
+                        {% endfor %}
+                {% else %}
+                    <p>Coming soon.</p>
+                {% endif %}
             </div>
-        {% else %}
-            <p>No Resources available.</p>
-        {% endif %}
 
 
 
-
-    </div>
 </div>
 
 {% endblock %}
