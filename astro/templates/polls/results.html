@@ -6,16 +6,22 @@
 
 {% block content %}
 <div class="container mt-3">
-    <div class="row mt-3">
-        <h1>{{ question.question_text }}</h1>
+    <div class="row my-3 mx-2 p-4">
+        <a href="{% url 'polls:polls-index' %}">Back to all polls</a>
+        <div class="row justify-content-center my-3">
+            <div class="col-8">
+              <h1>What rules {{ question.question_text }}?</h1>
 
-        <ul>
-        {% for choice in question.choice_set.all %}
-            <li>{{ choice.choice_text }} -- {{ choice.votes }} vote{{ choice.votes|pluralize }}</li>
-        {% endfor %}
-        </ul>
+                <ul class="list-unstyled">
+                {% for choice in question.choice_set.all %}
+                    <li><p class="lead">{{ choice.choice_text }} -- {{ choice.votes }} vote{{ choice.votes|pluralize }}</p></li>
+                {% endfor %}
+                </ul>
 
-        <a href="{% url 'polls:poll-detail' question.id %}">Vote again?</a>
+                <a href="{% url 'polls:poll-detail' question.id %}">Vote again?</a>
+            </div>
+
+        </div>
     </div>
 </div>
 
