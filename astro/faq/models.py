@@ -3,6 +3,7 @@ from django.db import models
 
 class Resource(models.Model):
     title = models.CharField(max_length=150)
+    sub_title = models.CharField(max_length=150, blank=True)
     author = models.TextField()
     link = models.URLField(blank=True)
     image = models.ImageField(upload_to="resources/", blank=True)
