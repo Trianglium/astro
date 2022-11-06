@@ -14,20 +14,26 @@
     <div class="row my-3 justify-content-center">
         {% if resource_list %}
                 {% for resource in resource_list %}
-                    <div class="col-6">
-                   <div class="clearfix p-4 m-2">
-                       <div class="float-start my-2">
+                    <div class="col-12 col-md-6">
+                   <div class="clearfix p-4 my-2 mx-4">
+                       <div class="float-start my-2 pr-4">
                            <a href="{% url 'faq:resource-detail' resource.id %}" class="link-unstyled">
                                     {% if resource.image %}
                                         <img class="img-thumbnail img-sm" src="{{ resource.image.url }}" alt="{{ resource.title }}"/>
                                     {% elif resource.image_url %}
                                         <img class="img-thumbnail img-sm" src="{{ resource.image_url }}" alt="{{ resource.title }}"/>
                                     {% endif %}
+                                    &nbsp;
                                 </a>
                        </div>
-                       <div class="align-middle mt-4 my-2">
+                       <div class="align-middle m-4 pl-4">
                            <a href="{% url 'faq:resource-detail' resource.id %}" class="link-unstyled">
-                                <h5>{{ resource.title }}</h5>
+                                <h5>&nbsp; {{ resource.title }}
+                                {% if resource.sub_title %}  <br/>
+                                <small class="text-muted">&nbsp; {{ resource.sub_title }}</span>
+                                {% endif %}</h5>
+                                <br/>
+                                <h6>&nbsp; {{ resource.author }}</h6>
                             </a>
                        </div>
                       </div>
