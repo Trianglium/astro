@@ -22,3 +22,9 @@ p {
 .link-unstyled {
     text-decoration: none;
 }
+
+
+/* Lists */
+.list-unstyled {
+    list-style-type: none;
+}
