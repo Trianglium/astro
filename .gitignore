@@ -134,3 +134,4 @@ media/
 # Data Dumps
 data.json
 astro/data.json
+newdata.json
