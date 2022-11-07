@@ -10,13 +10,18 @@
          <h1>Polls</h1>
          <p>What rules what? Vote, browse or create polls.</p>
     </div>
-    <div class="row mt-3">
+    <div class="row m-3 p-3">
         {% if latest_question_list %}
-            <ul class="list-unstyled">
+            <div class="col-6">
             {% for question in latest_question_list %}
-                <li><a href="{% url 'polls:poll-detail' question.id %}" class="link-unstyled"><h5>What rules {{ question.question_text }}?</h5></a></li>
+            <div class="card">
+                <div class="card-body">
+                <a href="{% url 'polls:poll-detail' question.id %}" class="link-unstyled"><h5 class="card-title">What rules {{ question.question_text }}?</h5>
+                </a>
+            </div>
+        </div>
             {% endfor %}
-            </ul>
+    </div>
         {% else %}
             <p>No polls are available.</p>
         {% endif %}
