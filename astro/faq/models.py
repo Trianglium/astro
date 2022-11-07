@@ -17,17 +17,32 @@ class Resource(models.Model):
 PLANET = "planet"
 SIGN = "sign"
 HOUSE= "house"
-POINTS = [
+ELEMENT = "element"
+MODALITY = "modality"
+CONCEPT = "concept"
+QUALITY = "quality"
+ASPECT = "aspect"
+POLARITY = "polarity"
+POINT = "point"
+
+POINT_CATEGORIES = [
     (PLANET, "planet"),
     (SIGN, "sign"),
-    (HOUSE, "house")
+    (HOUSE, "house"),
+    (ELEMENT, "element"),
+    (MODALITY, "modality"),
+    (CONCEPT, "concept"),
+    (QUALITY, "quality"),
+    (ASPECT, "aspect"),
+    (POLARITY, "polarity"),
+    (POINT, "point")
 ]
 
 class AstroPoint(models.Model):
     name = models.CharField(max_length=150)
     description = models.TextField(blank=True)
     symbol = models.TextField(blank=True)
-    tag = models.CharField(max_length=150, choices=POINTS)
+    tag = models.CharField(max_length=150, choices=POINT_CATEGORIES)
 
     def __str__(self):
         return self.name
