@@ -47,3 +47,85 @@ p {
 .list-unstyled {
     list-style-type: none;
 }
+
+
+/* Background & Border Colors */
+.bg-indigo {
+    background-color: #6610f2;
+}
+
+
+.bg-pink {
+    background-color:#d63384;
+}
+
+
+.bg-orange {
+    background-color: #fd7e14;
+}
+
+.bg-yellow {
+    background-color: #ffc107;
+}
+
+.bg-green {
+    background-color: #198754;
+}
+
+
+.bg-teal {
+    background-color: #20c997;
+}
+
+.bg-purple {
+    background-color: #6f42c1;
+}
+
+.bg-cyan {
+    background-color: #0dcaf0;
+}
+
+
+.bg-lightgreen {
+    background-color: #3ec929;
+}
+
+.border-indigo {
+    border-color: #6610f2;
+}
+
+
+.border-pink {
+    border-color:#d63384;
+}
+
+
+.border-orange {
+    border-color: #fd7e14;
+}
+
+.border-yellow {
+    border-color: #ffc107;
+}
+
+.border-green {
+    border-color: #198754;
+}
+
+
+.border-teal {
+    border-color: #20c997;
+}
+
+.border-purple {
+    border-color: #6f42c1;
+}
+
+.border-cyan {
+    border-color: #0dcaf0;
+}
+
+
+.border-lightgreen {
+    border-color: #3ec929;
+}
