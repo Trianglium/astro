@@ -14,7 +14,7 @@
         {% if latest_question_list %}
             <ul class="list-unstyled">
             {% for question in latest_question_list %}
-                <li><a href="{% url 'polls:poll-detail' question.id %}" class="link-unstyled"><h5>{{ question.question_text }}</h5></a></li>
+                <li><a href="{% url 'polls:poll-detail' question.id %}" class="link-unstyled"><h5>What rules {{ question.question_text }}?</h5></a></li>
             {% endfor %}
             </ul>
         {% else %}
