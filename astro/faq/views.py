@@ -14,7 +14,7 @@ class FAQIndex(ListView):
         context["house_list"] =  AstroPoint.objects.filter(tag="house")
         context["sign_list"] = AstroPoint.objects.filter(tag="sign")
         context["element_list"] = AstroPoint.objects.filter(tag="element")
-        ccontext["modality_list"] = AstroPoint.objects.filter(tag="modality")
+        context["modality_list"] = AstroPoint.objects.filter(tag="modality")
         context["concept_list"] = AstroPoint.objects.filter(tag="concept")
         context["quality_list"] = AstroPoint.objects.filter(tag="quality")
         context["aspect_list"] = AstroPoint.objects.filter(tag="aspect")
