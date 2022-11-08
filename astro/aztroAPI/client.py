@@ -67,7 +67,7 @@ class AztroClient:
     def zodiac_sign(self, new_zodiac_sign):
         self._zodiac_sign = new_zodiac_sign
     
-    def make_request(self):
+    def make_request(self, params):
         params["sign"] = self.zodiac_sign
         params["day"] = "today"
 
