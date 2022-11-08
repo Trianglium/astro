@@ -1,5 +1,6 @@
 import requests
 
+
 class AztroHoroscope:
     def __init__(self, data, sign):
         self.data = data
@@ -8,7 +9,7 @@ class AztroHoroscope:
     @property
     def sign(self):
         return self._sign
-    
+
     @sign.setter
     def sign(self, new_sign: str):
         self._sign = new_sign
@@ -16,11 +17,11 @@ class AztroHoroscope:
     @property
     def current_date(self):
         return self.data["current_date"]
-    
+
     @property
     def compatibility(self):
         return self.data["compatibility"]
-    
+
     @property
     def lucky_time(self):
         return self.data["lucky_time"]
@@ -35,7 +36,7 @@ class AztroHoroscope:
 
     @property
     def date_range(self):
-        return self.data[ "date_range"]
+        return self.data["date_range"]
 
     @property
     def mood(self):
@@ -44,12 +45,11 @@ class AztroHoroscope:
     @property
     def description(self):
         return self.data["description"]
-    
 
     def __str__(self):
         if self.current_date:
-            return f'{self.sign} ({self.current_date})'
-        
+            return f"{self.sign} ({self.current_date})"
+
         return self.sign
 
 
@@ -58,10 +58,22 @@ class AztroClient:
 
     def __init__(self):
         self.day = "today"
-        self.signs = ["aries", "taurus", "gemini", "cancer", "leo", "virgo", "libra", "scorpio", "sagittarius", "capricorn", "aquarius", "pisces"]
+        self.signs = [
+            "aries",
+            "taurus",
+            "gemini",
+            "cancer",
+            "leo",
+            "virgo",
+            "libra",
+            "scorpio",
+            "sagittarius",
+            "capricorn",
+            "aquarius",
+            "pisces",
+        ]
         self.horoscopes = []
 
-    
     def make_request(self, params):
         params["day"] = self.day
 
@@ -69,13 +81,12 @@ class AztroClient:
 
         resp.raise_for_status()
         return resp
-    
+
     def set_horoscopes(self):
         for sign in self.signs:
             resp = self.make_request({"sign": sign})
             resp_body = resp.json()
             sign_horoscope = AztroHoroscope(data=resp_body, sign=sign)
             self.horoscopes.append(sign_horoscope)
-        
-        return self.horoscopes
 
+        return self.horoscopes
