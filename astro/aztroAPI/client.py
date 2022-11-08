@@ -1,10 +1,17 @@
 import requests
 
 class AztroHoroscope:
-    def __init__(self, data):
+    def __init__(self, data, sign):
         self.data = data
-        # Example Response
-        #  {"current_date": "June 23, 2017", "compatibility": " Cancer", "lucky_time": " 7am", "lucky_number": " 64", "color": " Spring Green", "date_range": "Mar 21 - Apr 20", "mood": " Relaxed", "description": "It's finally time for you to think about just one thing: what makes you happy. Fortunately, that happens to be a person who feels the same way. Give yourself the evening off. Refuse to be put in charge of anything."}
+        self._sign = ""
+
+    @property
+    def sign(self):
+        return self._sign
+    
+    @sign.setter
+    def sign(self, new_sign: str):
+        self._sign = new_sign
 
     @property
     def current_date(self):
@@ -37,5 +44,38 @@ class AztroHoroscope:
     @property
     def description(self):
         return self.data["description"]
+    
 
+    def __str__(self):
+        if self.current_date:
+            return f'{self.sign} ({self.current_date})'
+        
+        return self.sign
+
+
+class AztroClient:
+    AZTRO_API_URL = "https://aztro.sameerkumar.website/"
+
+    def __init__(self, zodiac_sign: str):
+        self._zodiac_sign = zodiac_sign
+    
+    @property
+    def zodiac_sign(self):
+        return self._zodiac_sign
+    
+    @zodiac_sign.setter
+    def zodiac_sign(self, new_zodiac_sign):
+        self._zodiac_sign = new_zodiac_sign
+    
+    def make_request(self):
+        params["sign"] = self.zodiac_sign
+        params["day"] = "today"
+
+        resp = requests.get(self.AZTRO_API_URL, params=params)
+
+        resp.raise_for_status()
+        return resp
+    
+    def set_horoscope(self):
+        AztroHoroscope()
 
