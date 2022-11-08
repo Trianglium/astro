@@ -6,13 +6,27 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('faq', '0006_resource_sub_title'),
+        ("faq", "0006_resource_sub_title"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='astropoint',
-            name='tag',
-            field=models.CharField(choices=[('planet', 'planet'), ('sign', 'sign'), ('house', 'house'), ('element', 'element'), ('modality', 'modality'), ('concept', 'concept'), ('quality', 'quality'), ('aspect', 'aspect'), ('polarity', 'polarity'), ('point', 'point')], max_length=150),
+            model_name="astropoint",
+            name="tag",
+            field=models.CharField(
+                choices=[
+                    ("planet", "planet"),
+                    ("sign", "sign"),
+                    ("house", "house"),
+                    ("element", "element"),
+                    ("modality", "modality"),
+                    ("concept", "concept"),
+                    ("quality", "quality"),
+                    ("aspect", "aspect"),
+                    ("polarity", "polarity"),
+                    ("point", "point"),
+                ],
+                max_length=150,
+            ),
         ),
     ]

@@ -6,18 +6,36 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('faq', '0003_resource_description'),
+        ("faq", "0003_resource_description"),
     ]
 
     operations = [
         migrations.CreateModel(
-            name='AstroPoint',
+            name="AstroPoint",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('name', models.CharField(max_length=150)),
-                ('description', models.TextField(blank=True)),
-                ('symbol', models.TextField(blank=True)),
-                ('tag', models.CharField(choices=[('planet', 'planet'), ('sign', 'sign'), ('house', 'house')], max_length=150)),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("name", models.CharField(max_length=150)),
+                ("description", models.TextField(blank=True)),
+                ("symbol", models.TextField(blank=True)),
+                (
+                    "tag",
+                    models.CharField(
+                        choices=[
+                            ("planet", "planet"),
+                            ("sign", "sign"),
+                            ("house", "house"),
+                        ],
+                        max_length=150,
+                    ),
+                ),
             ],
         ),
     ]

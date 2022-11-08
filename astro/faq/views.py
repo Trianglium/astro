@@ -7,11 +7,11 @@ class FAQIndex(ListView):
     model = AstroPoint
     template_name = "faq/faq_index.html"
 
-    def get_context_data(self,**kwargs):
-        context = super(FAQIndex,self).get_context_data(**kwargs)
+    def get_context_data(self, **kwargs):
+        context = super(FAQIndex, self).get_context_data(**kwargs)
 
-        context["planet_list"] =  AstroPoint.objects.filter(tag="planet")
-        context["house_list"] =  AstroPoint.objects.filter(tag="house")
+        context["planet_list"] = AstroPoint.objects.filter(tag="planet")
+        context["house_list"] = AstroPoint.objects.filter(tag="house")
         context["sign_list"] = AstroPoint.objects.filter(tag="sign")
         context["element_list"] = AstroPoint.objects.filter(tag="element")
         context["modality_list"] = AstroPoint.objects.filter(tag="modality")
@@ -21,9 +21,7 @@ class FAQIndex(ListView):
         context["polarity_list"] = AstroPoint.objects.filter(tag="polarity")
         context["point_list"] = AstroPoint.objects.filter(tag="point")
 
-
         return context
-
 
 
 class ResourceList(ListView):

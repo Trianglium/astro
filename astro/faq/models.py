@@ -16,7 +16,7 @@ class Resource(models.Model):
 
 PLANET = "planet"
 SIGN = "sign"
-HOUSE= "house"
+HOUSE = "house"
 ELEMENT = "element"
 MODALITY = "modality"
 CONCEPT = "concept"
@@ -35,8 +35,9 @@ POINT_CATEGORIES = [
     (QUALITY, "quality"),
     (ASPECT, "aspect"),
     (POLARITY, "polarity"),
-    (POINT, "point")
+    (POINT, "point"),
 ]
+
 
 class AstroPoint(models.Model):
     name = models.CharField(max_length=150)

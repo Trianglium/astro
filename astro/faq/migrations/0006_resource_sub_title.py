@@ -6,13 +6,13 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('faq', '0005_rule'),
+        ("faq", "0005_rule"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='resource',
-            name='sub_title',
+            model_name="resource",
+            name="sub_title",
             field=models.CharField(blank=True, max_length=150),
         ),
     ]
