@@ -1,0 +1,19 @@
+{% if zodiac_signs %}
+<ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+    {% for zodiac in zodiac_signs %}
+    <li class="nav-item" role="presentation">
+      <button class="nav-link active" id="pills-{{ zodiac.name }}-tab" data-bs-toggle="pill" data-bs-target="#pills-{{ zodiac.name }}" type="button" role="tab" aria-controls="pills-{{ zodiac.name }}" aria-selected="true">{{ zodiac.name }}</button>
+    </li>
+    {% endfor %}
+  </ul>
+  {% endif %}
+
+  {% if sign_horoscopes %}
+  <div class="tab-content" id="pills-tabContent">
+    {% for horoscope in sign_horoscopes %}
+    <div class="tab-pane fade show active" id="pills-{{ horoscope.sign }}" role="tabpanel" aria-labelledby="pills-{{ horoscope.sign }}-tab">
+        {{ horoscope.today }}
+    </div>
+    {% endfor %}
+  </div>
+  {% endif %}
