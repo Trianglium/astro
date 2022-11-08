@@ -56,26 +56,26 @@ class AztroHoroscope:
 class AztroClient:
     AZTRO_API_URL = "https://aztro.sameerkumar.website/"
 
-    def __init__(self, zodiac_sign: str):
-        self._zodiac_sign = zodiac_sign
-    
-    @property
-    def zodiac_sign(self):
-        return self._zodiac_sign
-    
-    @zodiac_sign.setter
-    def zodiac_sign(self, new_zodiac_sign):
-        self._zodiac_sign = new_zodiac_sign
+    def __init__(self):
+        self.day = "today"
+        self.signs = ["aries", "taurus", "gemini", "cancer", "leo", "virgo", "libra", "scorpio", "sagittarius", "capricorn", "aquarius", "pisces"]
+        self.horoscopes = []
+
     
     def make_request(self, params):
-        params["sign"] = self.zodiac_sign
-        params["day"] = "today"
+        params["day"] = self.day
 
         resp = requests.get(self.AZTRO_API_URL, params=params)
 
         resp.raise_for_status()
         return resp
     
-    def set_horoscope(self):
-        AztroHoroscope()
+    def set_horoscopes(self):
+        for sign in self.signs:
+            resp = self.make_request({"sign": sign})
+            resp_body = resp.json()
+            sign_horoscope = AztroHoroscope(data=resp_body, sign=sign)
+            self.horoscopes.append(sign_horoscope)
+        
+        return self.horoscopes
 
