@@ -1,12 +1,18 @@
+{% if horoscopes %}
 <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+    {% for horoscope in horoscopes %}
   <li class="nav-item" role="presentation">
-      <button class="nav-link active" id="pills-libra-tab" data-bs-toggle="pill" data-bs-target="#pills-libra" type="button" role="tab" aria-controls="pills-libra" aria-selected="true"><span onclick="getHoroscope('libra')">libra</span></button>
+      <button class="nav-link active" id="pills-{{ horoscope.sign }}-tab" data-bs-toggle="pill" data-bs-target="#pills-{{ horoscope.sign }}" type="button" role="tab" aria-controls="pills-{{ horoscope.sign }}" aria-selected="true">{{ horoscope.sign }}</button>
   </li>
+  {% endfor %}
 </ul>
 <div class="tab-content" id="pills-tabContent">
+    {% for horoscope in horoscopes %}
 
-  <div class="tab-pane fade show active" id="pills-libra" role="tabpanel" aria-labelledby="pills-libra-tab">
+  <div class="tab-pane fade show active" id="pills-{{ horoscope.sign }}" role="tabpanel" aria-labelledby="pills-{{ horoscope.sign }}-tab">
+      {% endfor %}
 
   </div>
 
 </div>
+{% endif %}
