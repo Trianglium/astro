@@ -129,3 +129,50 @@ p {
 .border-lightgreen {
     border-color: #3ec929;
 }
+
+
+
+
+#horoscopes {
+    border: 1px solid #6610f2;
+}
+
+div#horoscopes {
+    width: 70%;
+}
+
+
+iframe, object, embed {
+    max-width: 100%;
+}
+
+.iframe-wrapper-cp {
+    position: relative;
+    width: 100%;
+    padding-top: 66.66%;
+}
+.iframe-wrapper {
+    position: relative;
+    width: 100%;
+    padding-top: 58.82%;
+}
+.iframe-content {
+    position:  absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+
+
+
+
+
+.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
+    border-color: #6610f2;
+}
+
+
+.sub-col-md {
+    max-width: 70%;
+}
