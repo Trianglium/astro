@@ -2,6 +2,9 @@
 
 function getHoroscope(sign_name) {
     const URL = `https://aztro.sameerkumar.website/?sign=${sign_name}&day=today`;
+
+    console.log(sign_name);
+    console.log(URL);
     fetch(URL, {
         method: 'POST'
     })
@@ -11,6 +14,6 @@ function getHoroscope(sign_name) {
         const description = json.description;
         console.log(date, description);
     });
-
-    return description
+    console.log(json);
+    return json;
 }
