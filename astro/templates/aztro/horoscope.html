@@ -7,7 +7,7 @@
   </li>
   {% endfor %}
 </ul>
-<div class="tab-content" id="todaysHoroscopeContent">
+<div class="tab-content" id="todaysHoroscopeContent p-4">
   {% for horoscope in horoscopes %}
   <div class="tab-pane fade show p-2" id="{{ horoscope.sign }}" role="tabpanel" aria-labelledby="{{ horoscope.sign }}-tab">
       <p class="lead">{{ horoscope.description }}</p>
