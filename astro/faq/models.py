@@ -1,6 +1,16 @@
 from django.db import models
 
 
+class Tag(models.Model):
+    value = models.TextField(max_length=100, unique=True)
+
+    class Meta:
+        ordering = ["value"]
+
+    def __str__(self):
+        return self.value
+
+
 class Resource(models.Model):
     title = models.CharField(max_length=150)
     sub_title = models.CharField(max_length=150, blank=True)
@@ -9,6 +19,7 @@ class Resource(models.Model):
     image = models.ImageField(upload_to="resources/", blank=True)
     image_link = models.URLField(blank=True)
     description = models.TextField(blank=True)
+    tags = models.ManyToManyField(Tag, related_name="resources", blank=True)
 
     def __str__(self):
         return self.title
