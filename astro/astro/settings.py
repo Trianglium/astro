@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 import os
 from pathlib import Path
+from .secret import APOD_API_KEY
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -21,6 +22,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = "django-insecure-@%wb5&)%lt%oxj#cysu==g%f=sx1kvb0mq8f@@dia3&swm)&@)"
+
+
+APOD_API_KEY=APOD_API_KEY
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
