@@ -18,14 +18,14 @@
 
         {% if planet_list %}
             {% for planet in planet_list %}
-            
+
             <div class="mt-2 card text-center border-primary" style="width:50%;">
               <div class="card-body">
                 <h4 class="card-title">{{ planet.name }}</h4>
                 <div class="float-start">
                     <p class="card-text text-left">{{ planet.description |safe }}</p> <br/>
                 </div>
-                <div class="float-end text-center"><span style='font-size:70px;'>&#{{ planet.symbol }};</span></div>
+                <div class="float-end text-center"><span style='font-size:70px;'>&#{{ planet.symbol|safe }};</span></div>
                 </div>
                 <div class="card-footer bg-transparent border-primary">
                     <span class="badge bg-primary">{{ planet.tag|safe }}</span>
@@ -42,14 +42,14 @@
         <h2 class="my-3">Signs</h2>
         {% if sign_list %}
             {% for sign in sign_list %}
-            
+
             <div class="mt-2 card text-center border-info" style="width:33.33%;">
               <div class="card-body">
                 <h4 class="card-title">{{ sign.name }}</h4>
                 <div class="float-start">
                     <p class="card-text text-left">{{ sign.description |safe }}</p> <br/>
                 </div>
-                <div class="float-end text-center"><span style='font-size:70px;'>&#{{ sign.symbol }};</span></div>
+                <div class="float-end text-center"><span style='font-size:70px;'>&#{{ sign.symbol|safe }};</span></div>
                 </div>
                 <div class="card-footer bg-transparent border-info">
                     <span class="badge bg-info">{{ sign.tag|safe }}</span>
@@ -66,14 +66,14 @@
         <h2 class="my-3">Houses</h2>
         {% if house_list %}
             {% for house in house_list %}
-            
+
             <div class="mt-2 card text-center border-success" style="width:25%;">
               <div class="card-body">
                 <h4 class="card-title">{{ house.name }}</h4>
                 <div class="float-start">
                     <p class="card-text text-left">{{ house.description |safe }}</p> <br/>
                 </div>
-                <div class="float-end text-center"><span style='font-size:70px;'>&#{{ house.symbol }};</span></div>
+                <div class="float-end text-center"><span style='font-size:70px;'>&#{{ house.symbol|safe }};</span></div>
                 </div>
                 <div class="card-footer bg-transparent border-success">
                     <span class="badge bg-success">{{ house.tag|safe }}</span>
@@ -91,14 +91,14 @@
 
         {% if point_list %}
             {% for point in point_list %}
-            
+
             <div class="mt-2 card text-center border-warning" style="width:50%;">
               <div class="card-body">
                 <h4 class="card-title">{{ point.name }}</h4>
                 <div class="float-start">
                     <p class="card-text text-left">{{ point.description |safe }}</p> <br/>
                 </div>
-                <div class="float-end text-center"><span style='font-size:70px;'>&#{{ point.symbol }};</span></div>
+                <div class="float-end text-center"><span style='font-size:70px;'>&#{{ point.symbol|safe }};</span></div>
                 </div>
                 <div class="card-footer bg-transparent border-warning">
                     <span class="badge bg-warning">{{ point.tag|safe }}</span>
@@ -115,14 +115,14 @@
         <h2 class="my-3">Modalities</h2>
         {% if modality_list %}
             {% for modality in modality_list %}
-            
+
             <div class="mt-2 card text-center border-danger" style="width:33.33%;">
               <div class="card-body">
                 <h4 class="card-title">{{ modality.name }}</h4>
                 <div class="float-start">
                     <p class="card-text text-left">{{ modality.description |safe }}</p> <br/>
                 </div>
-                <div class="float-end text-center"><span style='font-size:70px;'>&#{{ modality.symbol }};</span></div>
+                <div class="float-end text-center"><span style='font-size:70px;'>&#{{ modality.symbol|safe }};</span></div>
                 </div>
                 <div class="card-footer bg-transparent border-danger">
                     <span class="badge bg-danger">{{ modality.tag|safe }}</span>
@@ -139,14 +139,14 @@
         <h2 class="my-3">Elements</h2>
         {% if element_list %}
             {% for element in element_list %}
-            
+
             <div class="mt-2 card text-center border-indigo" style="width:25%;">
               <div class="card-body">
                 <h4 class="card-title">{{ element.name }}</h4>
                 <div class="float-start">
                     <p class="card-text text-left">{{ element.description |safe }}</p> <br/>
                 </div>
-                <div class="float-end text-center"><span style='font-size:70px;'>&#{{ element.symbol }};</span></div>
+                <div class="float-end text-center"><span style='font-size:70px;'>&#{{ element.symbol|safe }};</span></div>
                 </div>
                 <div class="card-footer bg-transparent border-indigo">
                     <span class="badge bg-indigo">{{ element.tag|safe }}</span>
@@ -164,14 +164,14 @@
 
         {% if aspect_list %}
             {% for aspect in aspect_list %}
-            
+
             <div class="mt-2 card text-center border-teal" style="width:50%;">
               <div class="card-body">
                 <h4 class="card-title">{{ aspect.name }}</h4>
                 <div class="float-start">
                     <p class="card-text text-left">{{ aspect.description |safe }}</p> <br/>
                 </div>
-                <div class="float-end text-center"><span style='font-size:70px;'>&#{{ aspect.symbol }};</span></div>
+                <div class="float-end text-center"><span style='font-size:70px;'>&#{{ aspect.symbol|safe }};</span></div>
                 </div>
                 <div class="card-footer bg-transparent border-teal">
                     <span class="badge bg-teal">{{ aspect.tag|safe }}</span>
@@ -188,14 +188,14 @@
         <h2 class="my-3">Qualities</h2>
         {% if quality_list %}
             {% for quality in quality_list %}
-            
+
             <div class="mt-2 card text-center border-purple" style="width:33.33%;">
               <div class="card-body">
                 <h4 class="card-title">{{ quality.name }}</h4>
                 <div class="float-start">
                     <p class="card-text text-left">{{ quality.description |safe }}</p> <br/>
                 </div>
-                <div class="float-end text-center"><span style='font-size:70px;'>&#{{ quality.symbol }};</span></div>
+                <div class="float-end text-center"><span style='font-size:70px;'>&#{{ quality.symbol|safe }};</span></div>
                 </div>
                 <div class="card-footer bg-transparent border-purple">
                     <span class="badge bg-purple text-white">{{ quality.tag|safe }}</span>
@@ -212,14 +212,14 @@
         <h2 class="my-3">Polarities</h2>
         {% if polarity_list %}
             {% for polarity in polarity_list %}
-            
+
             <div class="mt-2 card text-center border-pink" style="width:25%;">
               <div class="card-body">
                 <h4 class="card-title">{{ polarity.name }}</h4>
                 <div class="float-start">
                     <p class="card-text text-left">{{ polarity.description |safe }}</p> <br/>
                 </div>
-                <div class="float-end text-center"><span style='font-size:70px;'>&#{{ polarity.symbol }};</span></div>
+                <div class="float-end text-center"><span style='font-size:70px;'>&#{{ polarity.symbol|safe }};</span></div>
                 </div>
                 <div class="card-footer bg-transparent border-pink">
                     <span class="badge bg-pink">{{ polarity.tag|safe }}</span>
@@ -238,14 +238,14 @@
 
         {% if concept_list %}
             {% for concept in concept_list %}
-            
+
             <div class="mt-2 card text-center border-orange" style="width:50%;">
               <div class="card-body">
                 <h4 class="card-title">{{ concept.name }}</h4>
                 <div class="float-start">
                     <p class="card-text text-left">{{ concept.description |safe }}</p> <br/>
                 </div>
-                <div class="float-end text-center"><span style='font-size:70px;'>&#{{ concept.symbol }};</span></div>
+                <div class="float-end text-center"><span style='font-size:70px;'>&#{{ concept.symbol|safe }};</span></div>
                 </div>
                 <div class="card-footer bg-transparent border-orange">
                     <span class="badge bg-orange">{{ concept.tag|safe }}</span>
