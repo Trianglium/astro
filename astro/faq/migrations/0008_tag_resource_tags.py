@@ -6,23 +6,33 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('faq', '0007_alter_astropoint_tag'),
+        ("faq", "0007_alter_astropoint_tag"),
     ]
 
     operations = [
         migrations.CreateModel(
-            name='Tag',
+            name="Tag",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('value', models.TextField(max_length=100, unique=True)),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("value", models.TextField(max_length=100, unique=True)),
             ],
             options={
-                'ordering': ['value'],
+                "ordering": ["value"],
             },
         ),
         migrations.AddField(
-            model_name='resource',
-            name='tags',
-            field=models.ManyToManyField(blank=True, related_name='resources', to='faq.tag'),
+            model_name="resource",
+            name="tags",
+            field=models.ManyToManyField(
+                blank=True, related_name="resources", to="faq.tag"
+            ),
         ),
     ]
