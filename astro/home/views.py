@@ -11,8 +11,6 @@ class HomePage(TemplateView):
 
         # Nasa Image of the day (apod)
 
-
-
         # Aztro API
         horoscopes = [
             pyaztro.Aztro(sign="aries"),
@@ -30,7 +28,6 @@ class HomePage(TemplateView):
         ]
         context["horoscopes"] = horoscopes
         return context
-
 
 
 class AboutPage(TemplateView):

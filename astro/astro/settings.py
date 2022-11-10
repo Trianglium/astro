@@ -24,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = "django-insecure-@%wb5&)%lt%oxj#cysu==g%f=sx1kvb0mq8f@@dia3&swm)&@)"
 
 
-APOD_API_KEY=APOD_API_KEY
+APOD_API_KEY = APOD_API_KEY
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
