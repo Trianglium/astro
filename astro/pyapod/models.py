@@ -15,3 +15,8 @@ class APIModel(object):
         self.url = data["url"]
         self.title = data["title"]
         self.service_version = data["service_version"]
+        try:
+            self.copyright = data["copyright"]
+        except Exception:
+            self.copyright = None
+
