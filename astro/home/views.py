@@ -1,6 +1,7 @@
 from django.views.generic.base import TemplateView
 import pyaztro
 from astro.settings import APOD_API_KEY
+from pyapod.pyapod import Apod
 
 
 class HomePage(TemplateView):
@@ -10,6 +11,7 @@ class HomePage(TemplateView):
         context = super(HomePage, self).get_context_data(**kwargs)
 
         # Nasa Image of the day (apod)
+        context["apod_data"] = Apod().response
 
         # Aztro API
         horoscopes = [
