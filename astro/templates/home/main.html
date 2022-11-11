@@ -11,12 +11,7 @@
         </div>
 
         <div class="row g-3 m-3 p-3">
-            <div class="col-12 col-md-2 col-lg-3 justify-content-center">
-
-                    {% include "astro/current_planets.html" %}
-
-            </div>
-            <div class="col-12 col-md-8 col-lg-9 offset-md-1 offset-lg-0">
+            <div class="col-12">
                 <div class="text-center">
                     <h3>Daily Horoscope</h3>
 
@@ -28,39 +23,22 @@
         </div>
 
         <div class="row g-3 m-3 p-3">
-            <div class="col-12 col-md-8 col-lg-9">
+            <div class="col-12">
                 <h3>Astronomy Picture of the Day</h3>
                 {% include "apod/daily_image.html" %}
-
-
-            </div>
-            <div class="col-12 col-md-2 col-lg-3">
-
-                {% include "astro/current_birthdays.html" %}
-
             </div>
 
         </div>
-
-        <div class="row g-3 m-3 p-3">
-
-            <div class="col-12 col-md-2 col-lg-3">
-
-                {% include "astro/yesterday_birthdays.html" %}
-
-            </div>
-        </div>
-        <div class="col-12 col-md-8 col-lg-9">
-
-
-            </div>
 
         <div class="row g-3 my-3">
-            <div class="col-12 col-md-2 col-lg-3">
+            <div class="col">
+                {% include "astro/current_planets.html" %}
             </div>
-            <div class="col-12 col-md-8 col-lg-9">
-
-
+            <div class="col">
+                {% include "astro/current_birthdays.html" %}
+            </div>
+            <div class="col">
+                {% include "astro/yesterday_birthdays.html" %}
             </div>
         </div>
     </div>
