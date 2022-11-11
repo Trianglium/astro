@@ -141,20 +141,15 @@ div#horoscopes {
     width: 70%;
 }
 
-
-iframe, object, embed {
-    max-width: 100%;
-}
-
 .iframe-wrapper-cp {
     position: relative;
     width: 100%;
-    padding-top: 1.5%;
+    padding-top: 50.82%;
 }
 .iframe-wrapper {
     position: relative;
     width: 100%;
-    padding-top: 1.7%;
+    padding-top: 38.82%;
 }
 .iframe-content {
     position:  absolute;
@@ -163,6 +158,7 @@ iframe, object, embed {
     bottom: 0;
     right: 0;
 }
+
 
 
 
