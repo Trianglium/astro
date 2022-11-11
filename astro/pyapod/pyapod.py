@@ -28,7 +28,7 @@ class Apod(object):
         self.thumbs = thumbs
         self.api_key = api_key
         self.base_url = self.BASE_URL + self.api_key
-        self.params = {"api_key":self.api_key}
+        self.params = {"api_key": self.api_key}
 
     def get(self):
         try:
