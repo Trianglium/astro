@@ -12,7 +12,6 @@ from datetime import datetime
 from .models import APIModel
 
 
-
 class Apod(object):
     BASE_URL = "https://api.nasa.gov/planetary/apod"
 
@@ -25,7 +24,7 @@ class Apod(object):
         thumbs: bool = False,
         api_key: str = APOD_API_KEY,
     ):
-        self._date = datetime.now().strftime('%Y-%m-%d')
+        self._date = datetime.now().strftime("%Y-%m-%d")
         self.start_date = start_date
         self.end_date = end_date
         self.count = count
@@ -37,7 +36,7 @@ class Apod(object):
 
     @property
     def date(self):
-        self._date = datetime.now().strftime('%Y-%m-%d')
+        self._date = datetime.now().strftime("%Y-%m-%d")
         return self._date
 
     @property
@@ -53,7 +52,6 @@ class Apod(object):
 
         return self._params
 
-
     def get(self):
         try:
             r = requests.get(url=self.base_url, params=self.params)
@@ -67,5 +65,3 @@ class Apod(object):
     def response(self):
         self._response = APIModel(data=self.get())
         return self._response
-
-

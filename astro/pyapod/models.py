@@ -19,4 +19,3 @@ class APIModel(object):
             self.copyright = data["copyright"]
         except Exception:
             self.copyright = None
-
