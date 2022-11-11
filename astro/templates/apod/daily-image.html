@@ -1,0 +1,13 @@
+{% if apod_data %}
+
+{% for apod in apod_data %}
+<div class="card">
+    <img src={{ apod.url }} alt={{ apod.title }} class="card-img-top"/>
+    <div class="card-body">
+        <h5 class="card-title">{{ apod.title }}</h5>
+        <p class="card-text">{{ apod.explanation }}</p>
+    </div>
+</div>
+
+{% endfor %}
+{% endif %}
