@@ -11,7 +11,7 @@ class HomePage(TemplateView):
         context = super(HomePage, self).get_context_data(**kwargs)
 
         # Nasa Image of the day (apod)
-        context["apod_data"] = Apod().response
+        context["apod"] = Apod().response
 
         # Aztro API
         horoscopes = [

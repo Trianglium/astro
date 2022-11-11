@@ -1,6 +1,5 @@
-{% if apod_data %}
+{% if apod %}
 
-{% for apod in apod_data %}
 <div class="card">
     <img src={{ apod.url }} alt={{ apod.title }} class="card-img-top"/>
     <div class="card-body">
@@ -9,5 +8,4 @@
     </div>
 </div>
 
-{% endfor %}
 {% endif %}
