@@ -35,7 +35,9 @@
                                 <br/>
                                 <h6>&nbsp; {{ resource.author }}</h6>
                             </a>
-                            <p><span class="badge bg-light text-dark"></span>&nbsp;</p>
+                            {% if resource.tags %}
+                                <p><span class="badge bg-light text-dark">{{ resource.tags.resources }}</span>&nbsp;</p>
+                            {% endif %}
                        </div>
                       </div>
                       </div>
