@@ -130,7 +130,21 @@ p {
     border-color: #3ec929;
 }
 
+.tabWrapper {
+  margin: 2em;
+  max-width: 100%;
+}
 
+.tab-content {
+  margin-top: 1em;
+}
+
+/* tab reordering fix - older browsers may require other prefixed rules */
+.nav.nav-tabs {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap-reverse;
+}
 
 
 #horoscopes {
