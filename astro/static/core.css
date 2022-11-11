@@ -149,12 +149,12 @@ iframe, object, embed {
 .iframe-wrapper-cp {
     position: relative;
     width: 100%;
-    padding-top: 66.66%;
+    padding-top: 1.5%;
 }
 .iframe-wrapper {
     position: relative;
     width: 100%;
-    padding-top: 58.82%;
+    padding-top: 1.7%;
 }
 .iframe-content {
     position:  absolute;
