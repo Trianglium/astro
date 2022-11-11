@@ -10,7 +10,7 @@ import requests
 
 
 class Apod(object):
-    BASE_URL = "https://api.nasa.gov/planetary/apod?"
+    BASE_URL = "https://api.nasa.gov/planetary/apod"
 
     def __init__(
         self,
@@ -26,12 +26,13 @@ class Apod(object):
         self.end_date = end_date
         self.count = count
         self.thumbs = thumbs
-        self.api_key = "api_key=" + api_key
+        self.api_key = api_key
         self.base_url = self.BASE_URL + self.api_key
+        self.params = {"api_key":self.api_key}
 
-    def data(self):
+    def get(self):
         try:
-            r = requests.get(url=self.base_url)
+            r = requests.get(url=self.base_url, params=self.params)
             if r.status_code == 200:
                 data = r.json()
                 return data
