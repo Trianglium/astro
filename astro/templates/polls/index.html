@@ -17,7 +17,7 @@
             <div class="card">
                 <div class="card-body">
                 <!-- Button trigger modal -->
-                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#voteModal{{ question.pk }}">
+                <button type="button" class="" data-bs-toggle="modal" data-bs-target="#voteModal{{ question.pk }}">
                   <h5 class="card-title">What rules {{ question.question_text }}?</h5>
                 </button>
             </div>
@@ -51,3 +51,4 @@
 </div>
 
 {% endblock %}
+{% block script %}/static/polls/voteModal.js{% endblock %}
