@@ -1,6 +1,6 @@
 <div class="tabWrapper">
 {% if horoscopes %}
-<ul class="nav nav-tabs my-2" id="todaysHoroscope" role="tablist">
+<ul class="nav nav-tabs my-2 nav-justified" id="todaysHoroscope" role="tablist">
   {% for horoscope in horoscopes %}
   <li class="nav-item" role="presentation">
     <button class="nav-link" id="{{ horoscope.sign }}-tab" data-bs-toggle="tab" data-bs-target="#{{ horoscope.sign }}" type="button" role="tab" aria-controls="{{ horoscope.sign }}" aria-selected="true">{{ horoscope.sign|upper }}</button>
