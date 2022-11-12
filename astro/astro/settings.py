@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     "home.apps.HomeConfig",
     "polls.apps.PollsConfig",
     "faq.apps.FaqConfig",
+    "reader.apps.ReaderConfig",
 ]
 
 MIDDLEWARE = [
