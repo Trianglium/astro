@@ -36,7 +36,9 @@
                                 <h6>&nbsp; {{ resource.author }}</h6>
                             </a>
                             {% if resource.tags %}
-                                <p><span class="badge bg-light text-dark">{{ resource.tags.resources }}</span>&nbsp;</p>
+                                {% for value in resource.tags.all %}
+                                    <p><span class="badge bg-light text-dark">{{ value }}</span>&nbsp;</p>
+                                {% endfor %}
                             {% endif %}
                        </div>
                       </div>
