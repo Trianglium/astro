@@ -195,7 +195,10 @@
                 <div class="float-start">
                     <p class="card-text text-left">{{ quality.description |safe }}</p> <br/>
                 </div>
-                <div class="float-end text-center"><span style='font-size:70px;'>&#{{ quality.symbol|safe }};</span></div>
+                {% if quality.image_symbol %}
+                <div class="float-end text-center">
+                    <img src={{ quality.image_symbol }} alt={{ quality.name }}/></div>
+                {% endif %}
                 </div>
                 <div class="card-footer bg-transparent border-purple">
                     <span class="badge bg-purple text-white">{{ quality.tag|safe }}</span>
@@ -219,7 +222,7 @@
                 <div class="float-start">
                     <p class="card-text text-left">{{ polarity.description |safe }}</p> <br/>
                 </div>
-                <div class="float-end text-center"><span style='font-size:70px;'>&#{{ polarity.symbol|safe }};</span></div>
+                <div class="float-end text-center"><span style='font-size:100px;'>&#{{ polarity.symbol|safe }};</span></div>
                 </div>
                 <div class="card-footer bg-transparent border-pink">
                     <span class="badge bg-pink">{{ polarity.tag|safe }}</span>
