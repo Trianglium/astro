@@ -37,7 +37,20 @@
                             </a>
                             {% if resource.tags %}
                                 {% for value in resource.tags.all %}
-                                    <p><span class="badge bg-light text-dark">{{ value }}</span>&nbsp;</p>
+                                    {% if value == "book" or value == "article" or value == "forum" or value == "blog" %}
+                                    <p><span class="badge bg-yellow text-dark">{{ value }}</span>&nbsp;</p>
+
+                                    {% elif value == "podcast" or value == "video" or value == "stream" %}
+
+                                    <p><span class="badge bg-cyan text-dark">{{ value }}</span>&nbsp;</p>
+
+                                    {% elif value == "course" or value == "calculator" or value == "astrologer" or value == "website" %}
+                                    <p><span class="badge bg-lightgreen text-dark">{{ value }}</span>&nbsp;</p>
+
+                                    {% else %}
+                                    <p><span class="badge bg-purple text-light">{{ value }}</span>&nbsp;</p>
+                                    {% endif %}
+
                                 {% endfor %}
                             {% endif %}
                        </div>
