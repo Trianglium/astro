@@ -6,13 +6,13 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('faq', '0008_tag_resource_tags'),
+        ("faq", "0008_tag_resource_tags"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='astropoint',
-            name='image_symbol',
-            field=models.ImageField(blank=True, upload_to='learn/'),
+            model_name="astropoint",
+            name="image_symbol",
+            field=models.ImageField(blank=True, upload_to="learn/"),
         ),
     ]
