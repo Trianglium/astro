@@ -7,18 +7,25 @@ class Migration(migrations.Migration):
 
     initial = True
 
-    dependencies = [
-    ]
+    dependencies = []
 
     operations = [
         migrations.CreateModel(
-            name='Document',
+            name="Document",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('title', models.TextField()),
-                ('author', models.TextField(blank=True, default='unknown')),
-                ('pages', models.PositiveIntegerField(blank=True)),
-                ('cover', models.ImageField(blank=True, upload_to='documents/')),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("title", models.TextField()),
+                ("author", models.TextField(blank=True, default="unknown")),
+                ("pages", models.PositiveIntegerField(blank=True)),
+                ("cover", models.ImageField(blank=True, upload_to="documents/")),
             ],
         ),
     ]

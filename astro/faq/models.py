@@ -54,6 +54,7 @@ class AstroPoint(models.Model):
     name = models.CharField(max_length=150)
     description = models.TextField(blank=True)
     symbol = models.TextField(blank=True)
+    image_symbol = models.ImageField(upload_to="learn/", blank=True)
     tag = models.CharField(max_length=150, choices=POINT_CATEGORIES)
 
     def __str__(self):
