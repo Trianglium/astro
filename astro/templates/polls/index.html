@@ -17,7 +17,8 @@
             <div class="card">
                 <div class="card-body">
 
-                  <h5 class="card-title">What rules {{ question.question_text }}?</h5>
+                  <a href="{% url 'polls:poll-detail' question.id %}" class="link-unstyled"><h5 class="card-title">What rules {{ question.question_text }}?</h5>
+                </a>
 
             </div>
         </div>
