@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     "crispy_forms",
     "crispy_bootstrap5",
     "taggit",
+    "astro_auth.apps.AstroAuthConfig",
     "home.apps.HomeConfig",
     "polls.apps.PollsConfig",
     "faq.apps.FaqConfig",
@@ -111,6 +112,9 @@ AUTH_PASSWORD_VALIDATORS = [
         "NAME": "django.contrib.auth.password_validation.NumericPasswordValidator",
     },
 ]
+
+# Custom User Model
+AUTH_USER_MODEL = "astro_auth.User"
 
 
 # Internationalization
