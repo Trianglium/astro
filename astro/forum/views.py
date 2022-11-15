@@ -6,7 +6,7 @@ from django.views.generic.edit import CreateView, UpdateView, DeleteView
 
 from .models import Post, Tag, Comment
 
+
 class ForumIndex(ListView):
     model = Post
     template_name: str = "forum/index.html"
-
