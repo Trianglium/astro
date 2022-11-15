@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     "polls.apps.PollsConfig",
     "faq.apps.FaqConfig",
     "reader.apps.ReaderConfig",
+    "forum.apps.ForumConfig",
 ]
 
 MIDDLEWARE = [
