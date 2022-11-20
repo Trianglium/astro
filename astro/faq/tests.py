@@ -17,3 +17,15 @@ class FAQIndexTests(TestCase):
         self.assertTemplateUsed(response, "faq/faq_index.html")
 
 
+class ResourceListTests(TestCase):
+    def setUp(cls):
+        cls.resource = Resource.objects.create()
+    def test_url_pattern(self):
+        response = self.client.get("/learn/resources")
+        self.assertEqual(response.status_code, 200)
+
+    def test_index_page(self):
+        response = self.client.get(reverse("resource-list"))
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, "faq/resource-list.html")
+
