@@ -2,6 +2,7 @@ from django.test import TestCase
 from django.urls import reverse
 from forum.models import Comment, Tag, Post
 
+
 class ForumIndexTest(TestCase):
     @classmethod
     def setUpTestData(cls):
@@ -17,7 +18,3 @@ class ForumIndexTest(TestCase):
         response = self.client.get(reverse("forum-index"))
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, "forum/index.html")
-
-
-
-
