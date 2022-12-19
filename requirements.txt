@@ -9,6 +9,7 @@ crispy-bootstrap5   0.7
 dateutils           0.6.12
 Django              4.0.7
 django-crispy-forms 1.14.0
+django-extensions   3.2.1
 django-taggit       3.0.0
 idna                3.4
 importlib-metadata  5.0.0
