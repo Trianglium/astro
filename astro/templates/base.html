@@ -30,7 +30,7 @@
             <li class="nav-item"><a href="{% url 'home' %}" class="nav-link {% if request.resolver_match.url_name == 'home' %}active{% endif %}" aria-current="page">Home</a></li>
             <li class="nav-item"><a href="{% url 'polls:polls-index' %}" class="nav-link {% if request.resolver_match.url_name == 'polls-index' %}active{% endif %}">Polls</a></li>
             <li class="nav-item"><a href="{% url 'forum:forum-index' %}" class="nav-link {% if request.resolver_match.url_name == 'forum-index' %}active{% endif %}">Forum</a></li>
-            <li class="nav-item"><a href="{% url 'reader:doc-index' %}" class="nav-link {% if request.resolver_match.url_name == 'doc-index' or request.resolver_match.url_name == 'doc-detail' %}active{% endif %}">Reader</a></li>
+            <li class="nav-item"><a href="#">Reader</a></li>
 
             <li class="nav-item">
                 <a class="nav-link dropdown-toggle {% if request.resolver_match.url_name == 'resource-list' or  request.resolver_match.url_name == 'resource-detail' or request.resolver_match.url_name == 'faq-index' %}active{% endif %}" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">All about Astrology</a>
